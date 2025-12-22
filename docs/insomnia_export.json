@@ -1,0 +1,73 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-11-30T13:25:00.000Z",
+  "__export_source": "trae-ide",
+  "resources": [
+    {
+      "_id": "wrk_bancotudo",
+      "_type": "workspace",
+      "name": "BancoTudo",
+      "parentId": null
+    },
+    {
+      "_id": "env_bancotudo",
+      "_type": "environment",
+      "parentId": "wrk_bancotudo",
+      "name": "Base Environment",
+      "data": { "baseUrl": "http://localhost:3000" }
+    },
+    {
+      "_id": "req_list_clientes",
+      "_type": "request",
+      "parentId": "wrk_bancotudo",
+      "name": "Listar clientes",
+      "method": "GET",
+      "url": "{{ baseUrl }}/cliente",
+      "body": {}
+    },
+    {
+      "_id": "req_create_cliente",
+      "_type": "request",
+      "parentId": "wrk_bancotudo",
+      "name": "Criar cliente",
+      "method": "POST",
+      "url": "{{ baseUrl }}/cliente",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Joao da Silva\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"joao@example.com\"\n}"
+      }
+    },
+    {
+      "_id": "req_get_cliente",
+      "_type": "request",
+      "parentId": "wrk_bancotudo",
+      "name": "Buscar cliente por id",
+      "method": "GET",
+      "url": "{{ baseUrl }}/cliente/{{ id }}",
+      "body": {}
+    },
+    {
+      "_id": "req_patch_cliente",
+      "_type": "request",
+      "parentId": "wrk_bancotudo",
+      "name": "Atualizar cliente",
+      "method": "PATCH",
+      "url": "{{ baseUrl }}/cliente/{{ id }}",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Novo Nome\"\n}"
+      }
+    },
+    {
+      "_id": "req_delete_cliente",
+      "_type": "request",
+      "parentId": "wrk_bancotudo",
+      "name": "Excluir cliente",
+      "method": "DELETE",
+      "url": "{{ baseUrl }}/cliente/{{ id }}",
+      "body": {}
+    }
+  ]
+}
+
