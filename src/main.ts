@@ -5,6 +5,10 @@ import { PrismaExceptionFilter } from './common/filters/prisma-exception.filter'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  
+  // Define o prefixo global 'api' para todas as rotas
+  app.setGlobalPrefix('api');
+  
   app.enableCors();
   
   // Habilita validação global (DTOs)
