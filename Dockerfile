@@ -26,22 +26,3 @@ COPY --from=builder /app/dist ./dist
 EXPOSE 3001
 
 CMD ["node", "dist/src/main.js"]
-```
-
----
-
-**Arquivo:** `.dockerignore`
-```
-node_modules
-dist
-.env
-.env.local
-.env.production
-.git
-.gitignore
-*.log
-npm-debug.log*
-.DS_Store
-coverage
-.vscode
-.idea
